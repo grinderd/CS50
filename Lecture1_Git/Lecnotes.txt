@@ -1,0 +1,27 @@
+Git is about version control and colaboration
+
+allows two people to retreive, modify, syncronize, and pull new versions
+
+allows for branching and testing of changes
+
+allows for reversion of old code (rollback changes)
+
+Going to use github
+
+making new repo:
+go to github.com/new:
+
+Have to give it a name, description, make it public or private
+
+Now download to repo.
+
+COMMAND:
+git clone <url>
+- Get the url from the github repo
+
+commit: save point communicated to git (snapshot)
+
+COMMAND:
+git add <filename>
+- Tells git that we are going to add a file to track in commits
+

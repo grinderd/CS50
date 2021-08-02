@@ -1,0 +1,27 @@
+<!DOCTYPE html> #Doctype declaration
+<html lang="en">
+    <head>
+        <title>Style!</title>
+        <style>
+            h1 {
+                color: blue;
+                text-align: center;
+                } <!-- don't need to style at the h1 tag level to do this-->
+            #foo { <!--IDS-->
+                color: blue;
+                }
+            .baz { <!-- classes-->
+                color: yellow;
+            }
+        </style>
+    </head>
+    <body style = "color = springgreen;"> <!-- Child tags inherent style attributes in parents-->
+        <h1 style = "color: blue; text-align: center;"> Welcome to my Web Page!</h1>
+        <h1 style = "color: blue; text-align: center;">Second Heading</h1> <!-- Can do this manually-->
+        <h1 id = "foo">Headding 1</h1>
+        <h1 class = "baz">Headding 2</h1>
+        <h1 class = "baz">Headding 3</h1>
+        Hello, world!
+    </body>
+
+</html>

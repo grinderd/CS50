@@ -1,0 +1,140 @@
+#Video lectures:
+https://video.cs50.io/zFZrkCIc2Oc?screen=HbCJtscq-U8&start=55
+
+HTML5 and CSS3
+
+CSS3 - style
+
+Hyper Text Markup Language (HTML)
+
+<> begining tag
+</> ending tag
+
+Tags seen:
+head, html, body, title
+
+head section:
+- Other information about the webpage ie title
+
+body section:
+- Visible part of page user can see
+
+DOM: Document Object Model
+tree structure how each element relates to one another
+
+Common tags in HTML:
+
+<img src = "PATH TO MEDIA" alt = "TEXT REPRESENTING MEDIA">
+Note: no closing tag
+Image tag is self-closing
+
+Hyper links:
+<a href = ""> Text displays on webpage</a>
+a stands for anchor
+
+
+td - table data
+thead - table head
+tbody - table body
+
+forms: place for user to input information
+he has a form1.html which contains exaple
+
+input field can associate with data list contries
+have to use common key to associate with options
+<New to html5>
+
+CSS - cascading style sheets
+- tells browser how to use the html
+
+Don't want to have to update multiple tags for style
+-inline styling - changing style tag by tag.
+can add it to the head section
+
+How can we apply similar styling accross multimple pages?
+- take code and move to new file.
+
+Popular css properties:
+
+Size of elements:
+
+
+Multiple element selectors, use a comments
+
+what if you apply styling to a tag and an id which apply to a single element?
+Brings up the problem of specificity
+1. inline
+2. id
+3. class
+4. type (tag)
+
+<div id = "foo">
+    Hello!
+</div>
+
+div {color: blue;}
+#foo {color: red;}
+--Outcome here is red because the id takes precident
+
+Other selector selectors:
+
+a,b - Multiple element selector
+a b descendant selector
+a > b child selector
+a + b adjacent sibiling selector
+[a=b] attribute selector
+a:b Pseudoclass selector
+a::b Pseudoelement Selector
+
+Responsive design:
+
+- viewport
+    - Visual part of screen user can see
+    - What happens going from webpage to mobile?
+        Can just shrink - not ideal
+        Want to adapt..
+    add line to change:
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    Going to load width to be the device width
+
+- Media Queries
+    controling how screens depending on how rendering
+
+-Flex Box:
+    When trying to display multiple elements at the same time, wrap them around the page when screen is small (ie mobile)
+    wrap:
+    grid:
+
+bootstrap: popular css library so we don't have to start from scratch
+getboostrap.com
+how to use?
+put link in head tag
+can copy css class to apply styling
+
+rows in boostraps are 12 units long.
+- There is a set of classes to handle dynamic changes
+
+How to deal with other types of redundancies?
+
+Sass allows for variables:
+sass --watch variables.scss:variables.css <- automatically recompiles file
+
+nest css selectors through sass
+ie:
+div {
+    font-size: 18px;
+
+    p{
+        color: blue;
+    }
+
+    ul{
+        color: green;
+    }
+}
+
+inheritance
+%something <- baseline css
+@extend %something; <!-- brings the styling from above into this styling
+
+
