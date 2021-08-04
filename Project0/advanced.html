@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+https://www.google.com/search?as_q=cat+dog&as_epq=food&as_oq=animal&as_eq=weather
+-->
+
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" href="goog.css">
+    </head>
+    <body>
+        <div class = "links">
+            <a href = "text.html">Google Search</a>
+            <a href = 'image.html'>Image Search</a>
+
+        </div>
+        <div class = "search">
+            <img src="small-g-logo.png" alt="logo" width = "300" height="100">
+            <br>
+            <br>
+            <form action="https://google.com/search">
+                <label for="all_words">all these words:</label>
+                <input type="text" name="as_q" name = "all_words" > <br>
+                <label for="exact_word">this exact word or phrase:</label>
+                <input type="text" name="as_epq" name = "exact_word"> <br>
+                <label for="any_word">any of these words:</label>
+                <input type="text" name="as_oq" name = "any_word"> <br>
+                <label for="none_word">none of these words:</label>
+                <input type="text" name="as_eq" label = "none_word"> <br>
+                <input id = "abutton" type="submit" value="Advanced Search">
+            </form>
+        </div>
+    </body>
+</html>

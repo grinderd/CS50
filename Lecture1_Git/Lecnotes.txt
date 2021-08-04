@@ -25,3 +25,105 @@ COMMAND:
 git add <filename>
 - Tells git that we are going to add a file to track in commits
 
+COMMAND:
+git commit -m "<message>"
+- Description of changes
+- saves snapshot for this time
+
+
+COMMAND:
+git status:
+- gives branch
+- what is status of local commits compared to the origin
+
+COMMAND:
+git push
+- moves commits to the github repository
+- will be able to see code on github on the site
+
+After change made:
+git status will tell you file has been updated but not committed
+
+COMMAND:
+git commit -am "<message>"
+- commits *all* files that have been changed to commit
+
+still need to push to move github repo
+
+COMMAND:
+git pull
+- download current version from github
+- files will be updated to match remote copy
+
+Merge conflicts:
+- what happens if same code is modified
+
+What it looks like
+<<<<<<<
+LOCAL CHANGES (FROM local version)
+========
+REMOTE CHANGES (FROM Github)
+>>>>>>>> <<HASH of conflicting committ>>
+
+Remove <<<<< ===== and >>>> and hash
+Decide how to resolve
+
+Looks for changes to the same line
+
+After resolved, commits changes and push
+
+
+COMMANDS:
+git log
+- Describes each commits (hash, user, date, and message)
+
+COMMANDS:
+git reset
+- Takes current state and revert to older state
+
+git reset --hard <commit> :go back that commit
+git reset --hard origin/master :go to the version on github
+
+BRANCHING:
+- What happens when you want to fix a bug from an earlier version but not eliminate feature changes
+- Working on different parts of the repository at the same time
+
+master is main branch
+feature branch is where addl features are made
+Focus of branch is HEAD
+- can move head depending on focus
+once ready, both branches can be merged
+
+
+COMMAND:
+git branch
+- What branch am I on and how many are there in the project
+
+COMMAND:
+git checkout -b <name of new branch>
+- makes/moves to new branch
+(Note HEAD is indicated by * in git branch output)
+
+COMMAND:
+git checkout -b <name of old branch>
+- switches you back to branch
+- switching branches instantly updates document to branch
+
+COMMAND:
+git merge <branch to merge>
+- merge conflicts pop up when they make changes to same line
+
+FORKING:
+- Make a copy for yourself of the original repository
+
+PULL REQUEST:
+- requesting that modified the code through forking it.
+
+GitHub pages:
+- Free way to deploy pages to the internet
+- create repo
+- username.github.io
+- automatically works with pages
+- append documents and push
+- got to settings/Github pages
+

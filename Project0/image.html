@@ -2,13 +2,12 @@
 <!-- Design a front-end for Google Search, Google Image Search, and Google Advanced Search.-->
 <html lang="en">
     <head>
-        <title>Text Search</title>
+        <title>Search</title>
         <link rel="stylesheet" href="goog.css">
     </head>
     <body>
         <div class = "links">
-
-            <a href = "image.html">Image Search</a>
+            <a href = "text.html">Google Search</a>
             <a href = 'advanced.html'>Advanced Search</a>
 
         </div>
@@ -16,12 +15,12 @@
             <img src="small-g-logo.png" alt="logo" width = "300" height="100">
             <br>
             <br>
-            <form action = "https://google.com/search">
+            <form action = "https://www.google.com/search">
                 <input type = "text" name = "q">
-                <input type = "submit" value = "Google Search">
+                <input type = "hidden" name = "tbm" value = "isch">
+                <input type = "submit" value = "Image Search">
             </form>
         </div>
-
     </body>
 
 </html>

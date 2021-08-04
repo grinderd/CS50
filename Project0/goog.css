@@ -1,0 +1,27 @@
+.links {
+    position:absolute;
+    top:0;
+    right:0;
+}
+.search {
+    position: fixed; /* or absolute */
+    top: 35%;
+    left: 45%;
+
+    /*margin: auto;
+    width: 30%;
+    border: 3px solid green;
+    padding: 10px;
+    display: inline-block;*/
+}
+
+#abutton {
+    background-color:blue;
+    color: white;
+    padding: 10px 20px;
+}
+
+
+body {
+     font-family: Arial, san-sarif;
+}
