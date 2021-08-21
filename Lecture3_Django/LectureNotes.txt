@@ -1,0 +1,182 @@
+Django - Python web frame work
+- Dynamically generate html to make web applications
+
+What's new:
+Old: Static (Same every day)
+New: Changes every day (think nytimes.com)
+
+http (hyper text transfer protocol):
+
+Possible code returns:
+200 ok
+301 moved permanently
+403 forbidden
+404 not found
+500 internal server error
+
+Django is a web framework
+
+Installing Django
+
+pip3 install Django
+
+django-admin startproject <PROJECT_NAME>
+-generates files automatically
+manage.py
+- use to execute commands
+settings.py
+- settings for web applications
+urls.py
+- table of contents for web application
+
+Run application:
+python manage.py runserver
+- Run web server
+- shows the ip and port that web application is running
+Exit by pushing ctlr+c
+
+Project can have many different applications
+
+Getting started:
+python manage.py startapp <APP NAME>
+
+Creates APP NAME directory with documents
+views.py
+- describes what is rendered to user
+
+Go to settings.py
+INSTALLED_APPS list in this document
+Need to add application to this list the <APP NAME>
+
+Working on views.py in <APP NAME>
+- create view:
+from django.http import HttpResponse
+ def index(request):
+    return HttpResponse("Hello, world!")
+
+Create urls.py file for application:
+add file to APP NAME urls.py
+urls.py:
+-
+from django.urls import path
+from . import views
+urlpatterns = [
+    path("",views.index, name = "index") #views file, index is the function above
+
+Go to Project urls.py file
+look for urlpatterns
+add path('hello/', include("<APP NAME>.urls")
+Around 18 min in lecture gives overview of how to get things started.
+
+Creating additional views:
+create view > associate with url in urls.py of the application
+
+Paramaterize the path:
+def greet(request, name):
+    return HttpResponse(f"Hello, {name}")
+
+in urls.py
+path("<str:name>", views.greet, name = "greet"),
+
+Once these are in, then changing the url can generate the Hello, <Name> page
+
+What to render a whole template, can pass that through the render function
+
+Able to parameterize these forms up.
+render(request, "<name of form",{dictionary of variables}
+HTML can use {{ variable}} to use variables.
+
+isitchristmas.com:
+- How to use Django for this application?
+create app:
+python manage.py startapp newyear
+settings.py => add newyear to INSTALLED_APPS in proj
+urls.py -> add new path to urlpatterns in proj
+create urls.py in the new year directory add basics
+create index function in views.py in newyears app
+
+ How to do conditional html templating in Django:
+
+ {% if condition%}
+    What you want if true
+ {% else %}
+    What you want if false
+ {% endif %}
+
+Styling:
+put in new directory: Static
+- good to keep constant files in  directory
+- like css
+
+when putting css into file make href django logic
+
+can use looping logic into html template
+
+{% for task in tasks %}
+    <li> {{ taks}} </li>
+{% endfor %}
+
+Layout: Way to set up similar pages to reduce recoding:
+
+html document.
+
+body is different:
+{% block NAME %}
+{% endblock%}
+
+In each html using layout:
+{% extends "path/to/layout.html" %}
+
+{% block NAME %}
+{% endblock %}
+
+Adding link:
+
+Hard coding not encouraged
+use name:
+{% url 'add' %}
+looks up to the name 'add' in the url file
+
+beware name collisions:
+
+if multiple urls have the same name it is going to choose at random
+can create app_name in url file
+then the {% url 'app_name:NAME' %}
+
+How to have the form of one page to another page
+
+add action to form:
+action = "{% url 'task:add'%} method = post"
+
+Failed CSRF verification: (Cross Site Request Forgery)
+A unique token can be submitted which is known to be valid
+Done with Django middleware
+Add {% csrf_token %} to generate the CRSF token
+
+How to create forms easier in pages with Django:
+from django import forms
+
+class NewTaskForm(forms.Form):
+    task = forms.CharField(label = "New Task")
+    priority = forms.IntegerField(label = "Priority", min_value = 1, max_value = 10)
+
+Dealing with posted forms:
+    if request.method == "POST":
+        form = NewTaskForm(request.POST)
+        if form.is_valid():
+            task = form.cleaned_data['task']
+            tasks.append(task)
+        else:
+            return render(request, "task/add.html", {
+                "form":form
+            }
+
+
+Redirecting possible
+
+How to change application to be based on user
+- Sessions introduced:
+
+store variable in session:
+
+
