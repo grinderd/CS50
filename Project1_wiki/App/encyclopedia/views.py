@@ -10,5 +10,6 @@ def index(request):
 
 def title(request, title):
     return render(request, f"encyclopedia/title.html", {
-        "title": title
+        "title": title,
+        "body": util.get_entry(title)
     })
