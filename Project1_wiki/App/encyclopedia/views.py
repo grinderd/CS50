@@ -10,6 +10,17 @@ def index(request):
 
 
 def entry(request, title):
-    render(request, "encyclopedia/title.html", {
-    "title": title,
-    "body": util.get_entry(title)})
+    if util.get_entry(title) is None:
+        return render(request, "encyclopedia/titlenotfound.html",{
+            "title": title
+            })
+    else:
+        return render(request, "encyclopedia/title.html", {
+        "title": title,
+        "body": util.get_entry(title)})
+
+
+def create(request):
+    return render(request, "encyclopedia/create.html")
+
+
