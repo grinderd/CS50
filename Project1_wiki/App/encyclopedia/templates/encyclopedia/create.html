@@ -7,9 +7,9 @@
 {% block body %}
     <h1>Create Entry</h1>
 
-    <form>
-        <input type="text" name="title">
-        <input type="textarea" name="entry">
+    <form action="{% url 'create' %}" method = "POST">
+        {% csrf_token %}
+        {{form}}
         <input type="submit">
     </form>
 

@@ -5,11 +5,10 @@
 {% endblock %}
 
 {% block body %}
-    <h1>All Pages</h1>
+    <h1>Search Results:</h1>
 
     <ul>
-        {% for entry in entries %}
-
+        {% for entry in fltr_list %}
             <li><a href = "{{entry}}">{{entry}}</a></li>
         {% endfor %}
     </ul>
